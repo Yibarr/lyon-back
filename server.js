@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const URL_MONGO ='mongodb+srv://yael:perro@angelhack2019-ayfog.mongodb.net/test?retryWrites=true&w=majority'
 
@@ -19,6 +20,7 @@ const {Customer} = require('./models/Customer')
 const app = express();
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(bodyParser.json());
+app.use(cors());
 
 const PORT= 8000;
 
